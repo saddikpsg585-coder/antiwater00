@@ -1,0 +1,136 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calendarSection {
+  padding: 1.5rem;
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendarHeader h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.calendarControls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  padding-bottom: 0.5rem;
+}
+
+.dayCell {
+  min-height: 100px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: background 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dayCell:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.today {
+  border-color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.dateNum {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  align-self: flex-end;
+}
+
+.today .dateNum {
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.eventIndicator {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.highRisk { background: var(--risk-high); }
+.mediumRisk { background: var(--risk-medium); text-shadow: 0 1px 2px rgba(0,0,0,0.5);}
+.lowRisk { background: var(--risk-low); }
+
+.formSection {
+  padding: 1.5rem;
+}
+
+.formDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inlineInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
