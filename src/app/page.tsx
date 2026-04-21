@@ -120,3 +120,33 @@ export default function OverviewDashboard() {
     </div>
   );
 }
+"use client";
+
+export default function Page() {
+
+  const generate = async () => {
+    const topic = document.getElementById("topic").value;
+    const data = document.getElementById("data").value;
+
+    const res = await fetch("/api/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ topic, data }),
+    });
+
+    const result = await res.json();
+    document.getElementById("output").innerText = result.result;
+  };
+
+  return (
+    <div>
+      <h2>AI Report Generator</h2>
+      <input id="topic" />
+      <textarea id="data"></textarea>
+      <button onClick={generate}>Generate</button>
+      <pre id="output"></pre>
+    </div>
+  );
+}
